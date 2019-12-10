@@ -23,7 +23,7 @@ server.use(bodyParser.json())
 
 
 /*Global Configuration Routes */
-server.use(require('./Routes/index'));
+server.use(require('./routes/index'));
 
 
 //Statics Files
