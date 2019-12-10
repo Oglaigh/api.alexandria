@@ -13,7 +13,7 @@ const cors = require('cors');
 require('./config/database');
 
 //Settings
-server.set('port', process.env.port);
+server.set('port', process.env.PORT);
 server.use(express.static(path.join(__dirname, 'build')));
 server.use(cors());
 
@@ -40,6 +40,6 @@ server.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-  server.listen(process.env.PORT,()=>{
+  server.listen(server.get('port'),()=>{
   console.log(`Server running on port: ${server.get('port')}`);
 });
